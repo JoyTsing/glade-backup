@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkImage" id="checkImage">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="pixbuf">resource\check.png</property>
+  </object>
+  <object class="GtkListStore" id="fileStore">
+    <columns>
+      <!-- column-name fileName -->
+      <column type="gchararray"/>
+      <!-- column-name type -->
+      <column type="gchararray"/>
+      <!-- column-name encrypted -->
+      <column type="gchararray"/>
+      <!-- column-name compressed -->
+      <column type="gchararray"/>
+      <!-- column-name backupTime -->
+      <column type="gchararray"/>
+      <!-- column-name sourceDir -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkImage" id="uploadDirImage">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="pixbuf">resource\uploadDir.png</property>
+  </object>
+  <object class="GtkImage" id="uploadImage">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="pixbuf">resource\upload.png</property>
+  </object>
+  <object class="GtkWindow" id="window">
+    <property name="width-request">1152</property>
+    <property name="height-request">680</property>
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkFixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkSeparator" id="line1">
+            <property name="width-request">1152</property>
+            <property name="height-request">12</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+          </object>
+          <packing>
+            <property name="y">46</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="encrypt">
+            <property name="label" translatable="yes">Encrypt</property>
+            <property name="width-request">90</property>
+            <property name="height-request">40</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="draw-indicator">True</property>
+          </object>
+          <packing>
+            <property name="x">120</property>
+            <property name="y">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="recover">
+            <property name="label" translatable="yes">Recover</property>
+            <property name="width-request">80</property>
+            <property name="height-request">35</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="x">1062</property>
+            <property name="y">59</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="uploadDir">
+            <property name="width-request">28</property>
+            <property name="height-request">28</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="image">uploadDirImage</property>
+          </object>
+          <packing>
+            <property name="x">60</property>
+            <property name="y">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="check">
+            <property name="width-request">28</property>
+            <property name="height-request">28</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="image">checkImage</property>
+          </object>
+          <packing>
+            <property name="x">922</property>
+            <property name="y">58</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="versionLable">
+            <property name="width-request">209</property>
+            <property name="height-request">42</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Current Version：0.3 ——2021-9-27</property>
+          </object>
+          <packing>
+            <property name="x">23</property>
+            <property name="y">56</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="upload">
+            <property name="width-request">28</property>
+            <property name="height-request">28</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="image">uploadImage</property>
+          </object>
+          <packing>
+            <property name="x">10</property>
+            <property name="y">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="compress">
+            <property name="label" translatable="yes">Compress</property>
+            <property name="width-request">90</property>
+            <property name="height-request">40</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">False</property>
+            <property name="draw-indicator">True</property>
+          </object>
+          <packing>
+            <property name="x">200</property>
+            <property name="y">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledWindow">
+            <property name="width-request">1152</property>
+            <property name="height-request">583</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="shadow-type">in</property>
+            <property name="min-content-width">200</property>
+            <property name="min-content-height">150</property>
+            <child>
+              <object class="GtkTreeView" id="file_tree">
+                <property name="width-request">960</property>
+                <property name="height-request">550</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="model">fileStore</property>
+                <property name="search-column">0</property>
+                <child internal-child="selection">
+                  <object class="GtkTreeSelection"/>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="fileName">
+                    <property name="sizing">autosize</property>
+                    <property name="min-width">120</property>
+                    <property name="title" translatable="yes">Item</property>
+                    <property name="clickable">True</property>
+                    <property name="sort-column-id">0</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="name_view"/>
+                      <attributes>
+                        <attribute name="text">0</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="type">
+                    <property name="sizing">autosize</property>
+                    <property name="min-width">100</property>
+                    <property name="title" translatable="yes">Type</property>
+                    <property name="clickable">True</property>
+                    <property name="sort-column-id">1</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="size_view"/>
+                      <attributes>
+                        <attribute name="text">1</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="encrypted">
+                    <property name="sizing">autosize</property>
+                    <property name="min-width">60</property>
+                    <property name="title" translatable="yes">Encrypted</property>
+                    <property name="clickable">True</property>
+                    <property name="sort-column-id">2</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="progress_bar"/>
+                      <attributes>
+                        <attribute name="text">2</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="compressed">
+                    <property name="sizing">autosize</property>
+                    <property name="min-width">60</property>
+                    <property name="title" translatable="yes">Compressed</property>
+                    <property name="clickable">True</property>
+                    <property name="sort-column-id">3</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="status_view"/>
+                      <attributes>
+                        <attribute name="text">3</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="backupTime">
+                    <property name="sizing">autosize</property>
+                    <property name="min-width">160</property>
+                    <property name="title" translatable="yes">Time</property>
+                    <property name="clickable">True</property>
+                    <property name="sort-column-id">4</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="progress_bar1"/>
+                      <attributes>
+                        <attribute name="text">4</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="sourceDir">
+                    <property name="sizing">autosize</property>
+                    <property name="min-width">100</property>
+                    <property name="title" translatable="yes">Source</property>
+                    <property name="clickable">True</property>
+                    <property name="sort-column-id">5</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="progress_bar2"/>
+                      <attributes>
+                        <attribute name="text">5</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="y">97</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="delete">
+            <property name="label" translatable="yes">Delete</property>
+            <property name="width-request">80</property>
+            <property name="height-request">35</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="x">972</property>
+            <property name="y">59</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkTextView" id="passwordEncrypt">
+            <property name="width-request">140</property>
+            <property name="height-request">22</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="monospace">True</property>
+          </object>
+          <packing>
+            <property name="x">300</property>
+            <property name="y">12</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkTextView" id="passwordDecrypt">
+            <property name="width-request">120</property>
+            <property name="height-request">22</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="input-purpose">password</property>
+            <property name="monospace">True</property>
+          </object>
+          <packing>
+            <property name="x">780</property>
+            <property name="y">66</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
